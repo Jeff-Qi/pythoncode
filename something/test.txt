@@ -1,0 +1,36 @@
+# def run_sort(a: List[int]):
+#     fast_sort(a, 0, len(a) - 1)
+#
+#
+# def fast_sort(a: List[int], low: int, high: int):
+#     if low < high:
+#         k = random.randint(low, high)
+#         a[low], a[k] = a[k], a[low]
+#         q = partition(a, low, high)
+#         fast_sort(a, low, q - 1)
+#         fast_sort(a, q + 1, high)
+#
+#
+# def partition(a: List[int], low: int, high: int):
+#     i, pivot = low, a[low]
+#     for j in range(low + 1, high + 1):
+#         if a[j] < pivot:
+#             i = i + 1
+#             a[i], a[j] = a[j], a[i]
+#     a[low], a[i] = a[i], a[low]
+#     return i
+#
+
+# def partition(a: List[int], low: int, high: int):
+#     pivot, head, tail = a[low], low, high
+#
+#     while head < tail:
+#         while a[tail] > pivot:
+#             tail = tail - 1
+#         while a[head] <= pivot and head < tail:
+#             head = head + 1
+#         if head < tail:
+#             a[head], a[tail] = a[tail], a[head]
+#
+#     a[tail], a[low] = a[low], a[tail]
+#     return tail
